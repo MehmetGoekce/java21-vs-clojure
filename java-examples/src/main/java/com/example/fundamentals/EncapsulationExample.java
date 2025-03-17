@@ -8,9 +8,9 @@ public class EncapsulationExample {
 
     // Class with encapsulated state
     static class BankAccount {
-        private String accountNumber;
+        private final String accountNumber;
         private double balance;
-        private String owner;
+        private final String owner;
         private boolean frozen;
 
         // Constructor
@@ -50,7 +50,7 @@ public class EncapsulationExample {
             }
 
             this.balance += amount;
-            System.out.println(amount + " deposited. New balance: " + this.balance);
+            System.out.println(STR."\{amount} deposited. New balance: \{this.balance}");
         }
 
         public void withdraw(double amount) {
@@ -67,7 +67,7 @@ public class EncapsulationExample {
             }
 
             this.balance -= amount;
-            System.out.println(amount + " withdrawn. New balance: " + this.balance);
+            System.out.println(STR."\{amount} withdrawn. New balance: \{this.balance}");
         }
 
         public void freezeAccount() {
@@ -82,8 +82,7 @@ public class EncapsulationExample {
 
         @Override
         public String toString() {
-            return "Account[" + accountNumber + "] owned by " + owner +
-                    " with balance: $" + balance + (frozen ? " (FROZEN)" : "");
+            return STR."Account[\{accountNumber}] owned by \{owner} with balance: $\{balance}\{frozen ? " (FROZEN)" : ""}";
         }
     }
 
@@ -93,19 +92,19 @@ public class EncapsulationExample {
 
         // Create a new bank account
         BankAccount account = new BankAccount("12345", "John Doe", 1000.0);
-        System.out.println("Initial account: " + account);
+        System.out.println(STR."Initial account: \{account}");
 
         account.deposit(500.0);
         account.withdraw(200.0);
 
-        System.out.println("Account owner: " + account.getOwner());
-        System.out.println("Current balance: $" + account.getBalance());
+        System.out.println(STR."Account owner: \{account.getOwner()}");
+        System.out.println(STR."Current balance: $\{account.getBalance()}");
 
         // Demonstrate state protection
         try {
             account.withdraw(2000.0); // Should fail
         } catch (IllegalArgumentException e) {
-            System.out.println("Protected operation: " + e.getMessage());
+            System.out.println(STR."Protected operation: \{e.getMessage()}");
         }
 
         // Demonstrate state change
@@ -114,12 +113,12 @@ public class EncapsulationExample {
         try {
             account.deposit(100.0); // Should fail because account is frozen
         } catch (IllegalStateException e){
-            System.out.println("Protected operation: " + e.getMessage());
+            System.out.println(STR."Protected operation: \{e.getMessage()}");
         }
 
         account.unfreezeAccount();
         account.deposit(100.0);
 
-        System.out.println("Final account: " + account);
+        System.out.println(STR."Final account: \{account}");
     }
 }

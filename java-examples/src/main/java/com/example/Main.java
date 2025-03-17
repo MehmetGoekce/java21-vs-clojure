@@ -19,16 +19,16 @@ public class Main {
     private static void runAllExamples() {
         System.out.println("\n=== Running OOP Fundamentals Examples ===");
         EncapsulationExample.main(null);
-        //InheritanceExample.main(null);
-        //PolymorphismExample.main(null);
+        InheritanceExample.main(null);
+        PolymorphismExample.main(null);
     }
 
     private static void runSpecificExample(String exampleName) {
         switch (exampleName.toLowerCase()) {
             case "fundamentals" -> {
                 EncapsulationExample.main(null);
-                //InheritanceExample.main(null);
-                //PolymorphismExample.main(null);
+                InheritanceExample.main(null);
+                PolymorphismExample.main(null);
             }
         }
     }
