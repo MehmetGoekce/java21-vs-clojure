@@ -3,6 +3,8 @@ package com.example;
 import com.example.fundamentals.EncapsulationExample;
 import com.example.fundamentals.InheritanceExample;
 import com.example.fundamentals.PolymorphismExample;
+import com.example.patterns.BuilderPatternExample;
+import com.example.patterns.StrategyPatternExample;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +23,11 @@ public class Main {
         EncapsulationExample.main(null);
         InheritanceExample.main(null);
         PolymorphismExample.main(null);
+
+        System.out.println(STR."""
+                === running Design Patterns Examples ===""");
+        StrategyPatternExample.main(null);
+        BuilderPatternExample.main(null);
     }
 
     private static void runSpecificExample(String exampleName) {
@@ -29,6 +36,11 @@ public class Main {
                 EncapsulationExample.main(null);
                 InheritanceExample.main(null);
                 PolymorphismExample.main(null);
+            }
+
+            case "patterns" -> {
+                StrategyPatternExample.main(null);
+                BuilderPatternExample.main(null);
             }
         }
     }
