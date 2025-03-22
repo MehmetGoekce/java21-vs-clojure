@@ -4,6 +4,8 @@ import com.example.fundamentals.EncapsulationExample;
 import com.example.fundamentals.InheritanceExample;
 import com.example.fundamentals.PolymorphismExample;
 import com.example.patterns.BuilderPatternExample;
+import com.example.patterns.FactoryPatternExample;
+import com.example.patterns.ObserverPatternExample;
 import com.example.patterns.StrategyPatternExample;
 
 import java.util.Arrays;
@@ -28,6 +30,8 @@ public class Main {
                 === running Design Patterns Examples ===""");
         StrategyPatternExample.main(null);
         BuilderPatternExample.main(null);
+        FactoryPatternExample.main(null);
+        ObserverPatternExample.main(null);
     }
 
     private static void runSpecificExample(String exampleName) {
@@ -41,6 +45,8 @@ public class Main {
             case "patterns" -> {
                 StrategyPatternExample.main(null);
                 BuilderPatternExample.main(null);
+                FactoryPatternExample.main(null);
+                ObserverPatternExample.main(null);
             }
         }
     }
