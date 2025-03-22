@@ -117,7 +117,7 @@ public class ObserverPatternExample {
 
         @Override
         public void onNext(StockEvent event) {
-            System.out.println(STR."\{name} received: \{event.symbol()} price: $\{event.price()}");
+            System.out.println(STR."\{name} received: \{event.symbol()} price: CHF\{event.price()}");
             subscription.request(1); // Request next item
         }
 
