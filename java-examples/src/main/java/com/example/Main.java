@@ -7,6 +7,7 @@ import com.example.patterns.BuilderPatternExample;
 import com.example.patterns.FactoryPatternExample;
 import com.example.patterns.ObserverPatternExample;
 import com.example.patterns.StrategyPatternExample;
+import com.example.webscraper.WebScraper;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +33,12 @@ public class Main {
         BuilderPatternExample.main(null);
         FactoryPatternExample.main(null);
         ObserverPatternExample.main(null);
+
+        System.out.println("\n=== Running Web Scraper Example ===");
+        // Limiting scope for faster execution in demo
+        List<String> urls = List.of("https://example.com");
+        List<String> keywords = List.of("example", "domain");
+        new WebScraper().scrapeDemoUrls(urls, keywords);
     }
 
     private static void runSpecificExample(String exampleName) {
@@ -47,6 +54,12 @@ public class Main {
                 BuilderPatternExample.main(null);
                 FactoryPatternExample.main(null);
                 ObserverPatternExample.main(null);
+            }
+
+            case "webscraper" -> {
+                List<String> urls = List.of("https://example.com");
+                List<String> keywords = List.of("example", "domain");
+                new WebScraper().scrapeDemoUrls(urls, keywords);
             }
         }
     }
