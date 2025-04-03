@@ -39,6 +39,9 @@ public class Main {
         List<String> urls = List.of("https://example.com");
         List<String> keywords = List.of("example", "domain");
         new WebScraper().scrapeDemoUrls(urls, keywords);
+
+        System.out.println("\n=== Running E-Commerce System Example ===");
+        com.example.ecommerce.Demo.main(null);
     }
 
     private static void runSpecificExample(String exampleName) {
@@ -61,6 +64,11 @@ public class Main {
                 List<String> keywords = List.of("example", "domain");
                 new WebScraper().scrapeDemoUrls(urls, keywords);
             }
+
+            case "ecommerce" -> com.example.ecommerce.Demo.main(null);
+            default -> System.out.println("Unknown example. Available options: fundamentals, patterns, concurrency, dataprocessing, webscraper, ecommerce");
+
+
         }
     }
 }

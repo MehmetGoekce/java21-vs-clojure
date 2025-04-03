@@ -13,6 +13,8 @@ import java.util.function.Consumer;
  * The Observer Pattern defines a one-to-many dependency between objects so that
  * when one object changes state, all its dependents are notified and updated automatically.
  */
+@SuppressWarnings("preview")
+
 public class ObserverPatternExample {
 
     // Traditional Observer Pattern
@@ -97,7 +99,7 @@ public class ObserverPatternExample {
     // Java 9+ Reactive Streams approach to Observer Pattern
 
     // Event Class to be published
-    static record StockEvent(String symbol, double price, long timestamp) {}
+    record StockEvent(String symbol, double price, long timestamp) {}
 
     // Subscriber implmentation
     static class StockSubscriber implements Flow.Subscriber<StockEvent>{
