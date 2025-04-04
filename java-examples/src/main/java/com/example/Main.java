@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.concurrency.VirtualThreadExample;
 import com.example.fundamentals.EncapsulationExample;
 import com.example.fundamentals.InheritanceExample;
 import com.example.fundamentals.PolymorphismExample;
@@ -42,6 +43,10 @@ public class Main {
 
         System.out.println("\n=== Running E-Commerce System Example ===");
         com.example.ecommerce.Demo.main(null);
+
+
+        System.out.println("\n=== Running Concurrency Examples ===");
+        VirtualThreadExample.main(null);
     }
 
     private static void runSpecificExample(String exampleName) {
@@ -67,6 +72,8 @@ public class Main {
 
             case "ecommerce" -> com.example.ecommerce.Demo.main(null);
             default -> System.out.println("Unknown example. Available options: fundamentals, patterns, concurrency, dataprocessing, webscraper, ecommerce");
+
+            case "concurrency" -> VirtualThreadExample.main(null);
 
 
         }

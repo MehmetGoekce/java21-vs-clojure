@@ -10,9 +10,10 @@
                  [clojure.java-time "1.1.0"]
                  [http-kit "2.7.0"]
                  [cheshire "5.11.0"]
+                 [org.clojure/data.json "2.4.0"]
                  [org.clojure/java.jdbc "0.7.12"]
                  [org.clojure/tools.logging "1.2.4"]]
-
+  :source-paths ["src"]
   :main ^:skip-aot clojure-examples.core
   :target-path "target/%s"
 
